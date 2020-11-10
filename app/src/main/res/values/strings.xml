@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Proiect_Cebuc_Gabriel-Catalin_1079</string>
+    <string name="tv_welcome">Welcome Back!</string>
+    <string name="tv_messagex">We missed you! Login to get started</string>
+    <string name="tv_login">Login</string>
+    <string name="ed_gmail">gmail</string>
+    <string name="ed_pass">password</string>
+    <string name="cb_text">Remember me!</string>
+    <string name="tv_help">Need Help?</string>
+    <string name="btn_log">Sign In</string>
+    <string name="tv_account">Don\'t have an account?</string>
+    <string name="btn_reg">Register</string>
+</resources>
