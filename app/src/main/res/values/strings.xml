@@ -56,4 +56,8 @@
     <string name="title_activity_page_home">PageHomeActivity</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_activity_mata">mata</string>
+    <string name="title_activity_nav_drawer_home_page_chirias">NavDrawerHomePageChiriasActivity
+    </string>
+    <string name="title_activity_home_page_chirias">HomePageChiriasActivity</string>
+    <string name="title_activity_aaa">aaa</string>
 </resources>
