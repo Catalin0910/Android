@@ -9,29 +9,31 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.ai.proiect_cebuc_gabriel_catalin_1079.model.User;
+import com.ai.proiect_cebuc_gabriel_catalin_1079.model.UserProp;
 
-public class HomePageActivity extends AppCompatActivity {
+public class HomePagePropActivity extends AppCompatActivity {
 
     private TextView nameUser;
-    private User user;
+    private UserProp userProp;
     private Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_home_page_prop);
         btnLogout =  findViewById(R.id.back);
-        user = (User)getIntent().getSerializableExtra("User");
+        userProp = (UserProp) getIntent().getSerializableExtra("User");
         nameUser = findViewById(R.id.name);
-        if(user != null) {
-            nameUser.setText("Welcome " + user.getUserName());
+        if(userProp != null) {
+            nameUser.setText("Welcome " + userProp.getUserName());
         }
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =  new Intent(HomePageActivity.this, MainActivity.class);
+                Intent i =  new Intent(HomePagePropActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
+
     }
 }

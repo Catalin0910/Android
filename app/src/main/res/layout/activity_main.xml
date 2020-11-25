@@ -70,6 +70,7 @@
             android:orientation="vertical"
             android:layout_centerVertical="true">
             <EditText
+                android:id="@+id/email"
                 android:textColorHint="@color/colorPlaceHolder"
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
@@ -86,6 +87,7 @@
                 android:drawableTint="@color/colorTextBlack"
                 android:textColor="@color/colorTextBlack"/>
             <EditText
+                android:id="@+id/password"
                 android:textColorHint="@color/colorPlaceHolder"
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
@@ -130,6 +132,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_weight="1"/>
                     <Button
+                        android:id="@+id/btn_singin"
                         android:layout_width="0dp"
                         android:layout_height="52dp"
                         android:layout_weight="1"
@@ -138,6 +141,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/colorButtonText"
                         android:textSize="16dp"
+                        android:onClick="showToast"
                         android:fontFamily="@font/seg_ui_semibold"/>
                 </LinearLayout>
         </LinearLayout>
@@ -159,6 +163,7 @@
                 android:layout_marginRight="14dp"
                 />
             <Button
+                android:id="@+id/btn_register"
                 android:layout_width="0dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"
@@ -167,6 +172,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="18dp"
+                android:onClick="showToast"
                 android:fontFamily="@font/seg_ui_semibold"/>
         </LinearLayout>
     </RelativeLayout>

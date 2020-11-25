@@ -4,6 +4,191 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/et_fstName"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/firstName"
+        app:layout_constraintBottom_toTopOf="@+id/et_lastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableEnd="@drawable/ic_user"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorPlaceHolder"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"/>
+
+    <EditText
+        android:id="@+id/et_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/lastName"
+        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/et_fstName"
+        android:drawableEnd="@drawable/ic_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_fstName"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorPlaceHolder"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/et_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/et_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/et_lastName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableEnd="@drawable/ic_user"
+        app:layout_constraintTop_toBottomOf="@+id/et_lastName"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorPlaceHolder"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"/>
+
+    <EditText
+        android:id="@+id/et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/et_repass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/et_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        android:drawableEnd="@drawable/ic_password"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorPlaceHolder"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"/>
+
+    <EditText
+        android:id="@+id/et_repass"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/repassword"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/tv_textrg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/et_pass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:textAlignment="center"
+        android:drawableEnd="@drawable/ic_password"
+        android:textColorHint="@color/colorPlaceHolder"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"/>
+
+    <TextView
+        android:id="@+id/tv_textrg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rg"
+        app:layout_constraintBottom_toTopOf="@+id/rg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@id/et_repass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_repass" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/cb_consent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/tv_textrg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_textrg">
+
+        <RadioButton
+            android:id="@+id/rb_op1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/op1" />
+
+        <RadioButton
+            android:id="@+id/rb_op2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/op2" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cb_consent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/consent"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/swi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg" />
+
+    <Switch
+        android:id="@+id/swi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sw_text"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cb_consent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_consent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constrainedWidth="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/swi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swi"
+        android:background="@drawable/button_background"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText"
+        android:textSize="16dp"
+        android:fontFamily="@font/seg_ui_semibold"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
