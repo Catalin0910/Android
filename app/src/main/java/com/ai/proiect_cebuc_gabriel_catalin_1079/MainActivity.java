@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 if(user != null) {
                     Intent i = new Intent(MainActivity.this, HomePageActivity.class);
                     i.putExtra("User", user);
+
                     startActivity(i);
                     finish();
                 }

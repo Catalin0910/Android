@@ -14,13 +14,16 @@ public class User implements Serializable {
     private String userName;
     private String password;
     private String email;
+    private String userFamilyName;
     private String tipChirias1;
 
-    public User(String userName, String email, String password, String tipChirias1) {
+    public User(String userName, String userFamilyName, String email, String password, String tipChirias1) {
         this.userName = userName;
+        this.userFamilyName = userFamilyName;
         this.email = email;
         this.password = password;
         this.tipChirias1 = tipChirias1;
+
     }
 
     @NonNull
@@ -64,6 +67,14 @@ public class User implements Serializable {
         this.tipChirias1 = tipChirias1;
     }
 
+    public String getUserFamilyName() {
+        return userFamilyName;
+    }
+
+    public void setUserFamilyName(String userFamilyName) {
+        this.userFamilyName = userFamilyName;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -71,6 +82,7 @@ public class User implements Serializable {
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", userFamilyName='" + userFamilyName + '\'' +
                 ", tipChirias1='" + tipChirias1 + '\'' +
                 '}';
     }

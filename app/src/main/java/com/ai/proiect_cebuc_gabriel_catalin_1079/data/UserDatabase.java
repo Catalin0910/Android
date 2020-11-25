@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase;
 
 import com.ai.proiect_cebuc_gabriel_catalin_1079.model.User;
 
-@Database(entities = {User.class}, version = 5, exportSchema = false)
+@Database(entities = {User.class}, version = 6, exportSchema = false)
 public abstract class UserDatabase  extends RoomDatabase {
     public abstract UserDao getUserDao();
 }

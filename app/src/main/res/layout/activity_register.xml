@@ -24,7 +24,9 @@
         android:textColorHint="@color/colorPlaceHolder"
         android:background="@drawable/edit_text_background"
         android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"/>
+        android:layout_marginRight="48dp"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"/>
 
     <EditText
         android:id="@+id/et_lastName"
@@ -44,6 +46,8 @@
         android:background="@drawable/edit_text_background"
         android:layout_marginLeft="48dp"
         android:layout_marginRight="48dp"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
         />
 
     <EditText
@@ -64,7 +68,9 @@
         android:textColorHint="@color/colorPlaceHolder"
         android:background="@drawable/edit_text_background"
         android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"/>
+        android:layout_marginRight="48dp"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"/>
 
     <EditText
         android:id="@+id/et_pass"
@@ -84,7 +90,9 @@
         android:textColorHint="@color/colorPlaceHolder"
         android:background="@drawable/edit_text_background"
         android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"/>
+        android:layout_marginRight="48dp"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"/>
 
     <EditText
         android:id="@+id/et_repass"

@@ -63,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = etFirstName.getText().toString();
+                String userFamilyName = etLastName.getText().toString();
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
                 String tipchiras1 =  rbOpt1.getText().toString();
@@ -78,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                         startActivity(moveToLogin);
 
                     }else {
-                        User user = new User(userName, email, password, tipchiras1);
+                        User user = new User(userName, userFamilyName, email, password, tipchiras1);
                         userDao.insert(user);
                         Toast.makeText(RegisterActivity.this, "sunt in bd chiriasi", Toast.LENGTH_SHORT).show();
                         Intent moveToLogin = new Intent(RegisterActivity.this, MainActivity.class);
