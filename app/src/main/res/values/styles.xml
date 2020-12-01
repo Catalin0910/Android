@@ -7,5 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
+    <style name="ratingBar">
+        <item name="colorControlActivated">@color/Yellow</item>
+        <item name="colorControlNormal">@color/LightGrey</item>
+    </style>
 
 </resources>

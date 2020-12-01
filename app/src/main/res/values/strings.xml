@@ -73,4 +73,11 @@
     <string name="open_nav">Open</string>
     <string name="close_nav">Close</string>
     <string name="profileimfo">Profile Info</string>
+    <string name="rate_us">Rate US:</string>
+    <string name="selected_rating">Selected rating</string>
+    <string name="rate_me">Rate now</string>
+    <string name="detele">Delete Account</string>
+    <string name="btn_back">Back</string>
+    <string name="pret">"Pret: "</string>
+    <string name="cancel">Close</string>
 </resources>

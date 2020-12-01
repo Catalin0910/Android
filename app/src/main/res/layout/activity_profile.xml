@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu_chirias"
+
         android:layout_gravity="start"
         />
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,6 +38,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circular_image"
+            android:layout_marginTop="30dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/profileuser"
@@ -142,13 +144,32 @@
             android:textSize="17sp"
             android:gravity="center"
             android:textColorHint="@color/colorPlaceHolder"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/deleteaccount"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/adresaemail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adresaemail"
             app:drawableEndCompat="@drawable/ic_password" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/deleteaccount"
+            android:text="@string/detele"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@drawable/delete_button"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/parola"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parola"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

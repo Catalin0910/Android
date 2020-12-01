@@ -68,6 +68,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 break;
             case R.id.nav_rent:
                 Intent intent =  new Intent(HomePageActivity.this, RentActivity.class);
+                intent.putExtra("UserRent", user);
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
@@ -78,6 +79,11 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_logut:
                 Intent intent2 =  new Intent(HomePageActivity.this, MainActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.nav_rate:
+                Intent intent3 = new Intent(HomePageActivity.this, RatingActivity.class);
+                intent3.putExtra("UserRate", user);
+                startActivity(intent3);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

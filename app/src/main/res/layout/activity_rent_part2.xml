@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".RentPart2Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_titlu"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="25sp"
+        android:gravity="left"
+        />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/gv_poza"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="40dp"
+        android:layout_below="@+id/tv_titlu"
+        />
+
+<!--    <ImageView-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:id="@+id/rent2_image"-->
+<!--        android:layout_marginTop="150dp"-->
+<!--        android:src="@drawable/profileuser"-->
+<!--        android:layout_centerHorizontal="true"/>-->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_descriere2"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/gv_poza"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_pret"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_descriere2"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_contact"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_pret"/>
+
+
+    <Button
+        android:id="@+id/btn_back_123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_contact"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_back"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText"
+        android:textSize="16sp" />
+
+</RelativeLayout>
