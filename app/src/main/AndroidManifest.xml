@@ -9,7 +9,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RentPart2Activity" android:parentActivityName=".RentActivity"/>
+        <activity android:name=".GrafPropActivity"></activity>
+        <activity android:name=".PropertiesPropActivity" />
+        <activity android:name=".RatePropActivity" />
+        <activity android:name=".ProfilePropActivity" />
+        <activity
+            android:name=".RentPart2Activity"
+            android:parentActivityName=".RentActivity" />
         <activity android:name=".RatingActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RentActivity" />

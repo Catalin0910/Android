@@ -80,4 +80,11 @@
     <string name="btn_back">Back</string>
     <string name="pret">"Pret: "</string>
     <string name="cancel">Close</string>
+    <string name="apartamente">Properties</string>
+    <string name="announce">Trust us</string>
+    <string name="rent12">Make others feels like home</string>
+    <string name="services">Best services</string>
+    <string name="constract">Contract</string>
+    <string name="info">Additional</string>
+    <string name="graf">Money</string>
 </resources>

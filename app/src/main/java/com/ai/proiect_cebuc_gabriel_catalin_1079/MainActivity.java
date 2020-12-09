@@ -4,11 +4,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSign;
     private EditText email;
     private EditText password;
+    private CheckBox rember;
+
     UserDao db;
     UserDatabase database;
     UserPropDao dbProp;
@@ -42,16 +50,17 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn = findViewById(R.id.btn_register);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, R.string.message, Toast.LENGTH_SHORT).show();
                 Toasty.success(MainActivity.this, "Going", Toast.LENGTH_SHORT).show();
-                Intent intent =  new Intent(MainActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivityForResult(intent, ADD_REQUEST_CODE);
             }
         });
-        btnSign  = findViewById(R.id.btn_singin);
+        btnSign = findViewById(R.id.btn_singin);
 
         database = Room.databaseBuilder(this, UserDatabase.class, "Users")
                 .allowMainThreadQueries()
@@ -64,38 +73,40 @@ public class MainActivity extends AppCompatActivity {
 
         db = database.getUserDao();
         dbProp = databaseProp.getUserPropDao();
-        btnSign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String emailUser =  email.getText().toString();
-                String pass = password.getText().toString();
-                String emailUser1 =  email.getText().toString();
-                String pass1 = password.getText().toString();
 
-                User user = db.getUser(emailUser, pass );
-                UserProp userProp =  dbProp.getUserProp(emailUser1, pass1);
 
-                if(user != null) {
-                    Intent i = new Intent(MainActivity.this, HomePageActivity.class);
-                    i.putExtra("User", user);
+            btnSign.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String emailUser = email.getText().toString();
+                    String pass = password.getText().toString();
+                    String emailUser1 = email.getText().toString();
+                    String pass1 = password.getText().toString();
 
-                    startActivity(i);
-                    finish();
+                    User user = db.getUser(emailUser, pass);
+                    UserProp userProp = dbProp.getUserProp(emailUser1, pass1);
+
+
+                    if (user != null) {
+                        Intent i = new Intent(MainActivity.this, HomePageActivity.class);
+                        i.putExtra("User", user);
+
+                        startActivity(i);
+                        finish();
+                    } else if (userProp != null) {
+                        Intent intent = new Intent(MainActivity.this, HomePagePropActivity.class);
+                        intent.putExtra("User", userProp);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(MainActivity.this, R.string.propNot, Toast.LENGTH_SHORT).show();
+                    }
+
                 }
-                else if(userProp != null) {
-                    Intent intent = new Intent(MainActivity.this, HomePagePropActivity.class);
-                    intent.putExtra("User", userProp);
-                    startActivity(intent);
-                    finish();
-                }else {
-                    Toast.makeText(MainActivity.this, R.string.propNot, Toast.LENGTH_SHORT).show();
-                }
+            });
+        }
 
-            }
-        });
-    }
-
-    @Override
+        @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
        if(requestCode == ADD_REQUEST_CODE) {
            if(data != null) {
@@ -107,4 +118,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
 }
+
+
+
+

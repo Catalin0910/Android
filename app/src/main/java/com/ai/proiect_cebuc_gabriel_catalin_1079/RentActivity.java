@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -133,8 +134,13 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 break;
             case R.id.nav_logut:
+                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("rember", "false");
+                editor.apply();
                 Intent intent2 =  new Intent(RentActivity.this, MainActivity.class);
                 startActivity(intent2);
+                finish();
                 break;
             case R.id.nav_rate:
                 Intent intent3 = new Intent(RentActivity.this, RatingActivity.class);

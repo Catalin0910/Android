@@ -104,16 +104,17 @@
                 android:drawableEnd="@drawable/ic_password"
                 android:drawableTint="@color/colorTextBlack"
                 android:textColor="@color/colorTextBlack"/>
-            <CheckBox
-                android:buttonTint="@color/colorBlack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="18dp"
-                android:text="@string/cb_text"
-                android:textSize="18dp"
-                android:textColor="@color/colorTextBlack"
-                android:fontFamily="@font/seg_ui_semibold"/>
+<!--            <CheckBox-->
+<!--                android:id="@+id/remeber"-->
+<!--                android:buttonTint="@color/colorBlack"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="48dp"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:text="@string/cb_text"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/colorTextBlack"-->
+<!--                android:fontFamily="@font/seg_ui_semibold"/>-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

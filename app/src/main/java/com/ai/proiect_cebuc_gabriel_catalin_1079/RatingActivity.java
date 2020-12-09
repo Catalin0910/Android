@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,8 +124,13 @@ public class RatingActivity extends AppCompatActivity implements NavigationView.
                 startActivity(intent3);
                 break;
             case R.id.nav_logut:
+                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("rember", "false");
+                editor.apply();
                 Intent intent2 =  new Intent(RatingActivity.this, MainActivity.class);
                 startActivity(intent2);
+                finish();
                 break;
             case R.id.nav_rate:
                 break;
