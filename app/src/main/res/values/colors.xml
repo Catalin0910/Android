@@ -14,4 +14,9 @@
     <color name="colorPlaceHolder">#505050</color>
     <color name="Yellow">#ffd700</color>
     <color name="LightGrey">#d3d3d3</color>
+    <color name="color_pink">#cf4bf8</color>
+    <color name="color_violet">#8813e4</color>
+    <color name="color_blue">#3d93d9</color>
+    <color name="color_green_light">#5ff0f7</color>
+
 </resources>

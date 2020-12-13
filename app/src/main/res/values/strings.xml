@@ -88,4 +88,9 @@
     <string name="info">Additional</string>
     <string name="graf">Money</string>
     <string name="add">Add Flat</string>
+    <string name="title">Titlu</string>
+    <string name="descriere">Descriere</string>
+    <string name="aaa">Pret</string>
+    <string name="contact">Date Contact</string>
+    <string name="adugarer">Add</string>
 </resources>
