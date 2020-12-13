@@ -113,7 +113,7 @@ public class RatePropActivity extends AppCompatActivity implements NavigationVie
                 startActivity(intent);
                 break;
             case R.id.nav_rent:
-                Intent intent1 =  new Intent(RatePropActivity.this, RentActivity.class);
+                Intent intent1 =  new Intent(RatePropActivity.this, PropertiesPropActivity.class);
                 intent1.putExtra("UserRent", user);
                 startActivity(intent1);
                 break;

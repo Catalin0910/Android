@@ -122,7 +122,7 @@ public class ProfilePropActivity extends AppCompatActivity implements Navigation
                 startActivity(intent);
                 break;
             case R.id.nav_rent:
-                Intent intent1 =  new Intent(ProfilePropActivity.this, RentActivity.class);
+                Intent intent1 =  new Intent(ProfilePropActivity.this, PropertiesPropActivity.class);
                 intent1.putExtra("UserRent", user);
                 startActivity(intent1);
                 break;
