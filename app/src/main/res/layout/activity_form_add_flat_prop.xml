@@ -41,28 +41,45 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="@string/title"/>
+            android:hint="@string/title"
+            android:id="@+id/titile"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="@string/descriere"/>
+            android:hint="@string/descriere"
+            android:id="@+id/description"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="@string/aaa"/>
+            android:hint="@string/aaa"
+            android:id="@+id/pretfrate"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="@string/contact"/>
+            android:hint="@string/contact"
+            android:id="@+id/contactme"/>
     </LinearLayout>
     <Button
+        android:id="@+id/astaadugap"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="@string/adugarer"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="@id/formadd"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/back"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/button_shape"/>
+    <Button
+        android:id="@+id/back"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/back"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/formadd"
+        app:layout_constraintStart_toEndOf="@+id/astaadugap"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
         android:background="@drawable/button_shape"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

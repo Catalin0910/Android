@@ -14,6 +14,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ai.proiect_cebuc_gabriel_catalin_1079.model.User;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -26,6 +28,7 @@ public class RentPart2Activity extends AppCompatActivity {
     private  TextView tvPret;
     private  TextView tvContact;
     private Button btnBack;
+    private User user;
     int position;
     ArrayList<Integer> mImagesIds = new ArrayList<>(Arrays.asList(R.drawable.ap1, R.drawable.ap2, R.drawable.ap3,
             R.drawable.ap4, R.drawable.ap5,
@@ -38,10 +41,19 @@ public class RentPart2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_rent_part2);
         inital();
 
+        user = (User)getIntent().getSerializableExtra("UserRent2");;
+        if(user != null) {
+            user.getUserName();
+            user.getUserFamilyName();
+            user.getUserName();
+            user.getPassword();
+        }
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =  new Intent(RentPart2Activity.this, RentActivity.class);
+                i.putExtra("UserRent", user);
                 startActivity(i);
             }
         });

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "145384942125",
+    "firebase_url": "https://proiectdamcebuc-default-rtdb.firebaseio.com",
+    "project_id": "proiectdamcebuc",
+    "storage_bucket": "proiectdamcebuc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145384942125:android:f31260d37f9dac248126a4",
+        "android_client_info": {
+          "package_name": "com.ai.proiect_cebuc_gabriel_catalin_1079"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145384942125-6caigb7hsml7lapgfv8cho6cl6no03ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1ecNHvVte6G_gZYAvJbYQ3Z7H49WfyUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145384942125-6caigb7hsml7lapgfv8cho6cl6no03ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

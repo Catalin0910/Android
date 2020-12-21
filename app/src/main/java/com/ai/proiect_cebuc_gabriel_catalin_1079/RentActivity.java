@@ -104,6 +104,7 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
                     intent.putExtra("contact", "Date contact: " +
                             ((Apartemnte) apartamenteAdapter.getItem(position)).getDateContact());
                     intent.putExtra("position", ""+position);
+                    intent.putExtra("UserRent2", user);
                     startActivity(intent);
                     Log.v("mama", intent.toString());
                 return true;
