@@ -4,10 +4,10 @@ public class ApartamenteClass {
 
     private String titlu;
     private String descriere;
-    private int pret;
+    private long pret;
     private String contant;
 
-    public ApartamenteClass(String titlu, String descriere, int pret, String contant) {
+    public ApartamenteClass(String titlu, String descriere, long pret, String contant) {
         this.titlu = titlu;
         this.descriere = descriere;
         this.pret = pret;
@@ -33,11 +33,11 @@ public class ApartamenteClass {
         this.descriere = descriere;
     }
 
-    public int getPret() {
+    public long getPret() {
         return pret;
     }
 
-    public void setPret(int pret) {
+    public void setPret(long pret) {
         this.pret = pret;
     }
 
@@ -48,4 +48,11 @@ public class ApartamenteClass {
     public void setContant(String contant) {
         this.contant = contant;
     }
+
+    @Override
+    public String toString() {
+        return "Titlu: " + titlu + "\n" + "Descriere: " + descriere + "\n" + "Pret: " + pret + "\n" + "Contact: " + contant;
+
+    }
+
 }

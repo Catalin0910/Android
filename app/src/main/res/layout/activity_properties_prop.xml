@@ -4,12 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PropertiesPropActivity">
+    tools:context=".PropertiesPropActivity"
+    android:orientation="vertical">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:id="@+id/listview_app"
+        />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/adugare_app"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add"
-        android:id="@+id/adugare_app"/>
+        android:layout_gravity="center"
+        android:text="@string/add" />
+
 
 </LinearLayout>
