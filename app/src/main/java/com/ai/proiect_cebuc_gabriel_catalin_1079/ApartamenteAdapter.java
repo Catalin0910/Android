@@ -63,14 +63,22 @@ public class ApartamenteAdapter extends BaseAdapter {
         Apartemnte apartemnte = apartemntes.get(position);
         tvTitlul.setText(apartemnte.getTitlu());
         tvDescriere.setText(apartemnte.getDescriereScurta());
-        view.setImageResource(rImags[position]);
+        if(position < rImags.length) {
+            view.setImageResource(rImags[position]);
+        }
         return  item;
     }
 
-    public void addItems(Apartemnte list){
-       apartemntes.add(list);
+    public void addItems(ArrayList<Apartemnte> list){
+       apartemntes.addAll(list);
         notifyDataSetChanged();
     }
+
+    public void addElement(Apartemnte element){
+        apartemntes.add(element);
+        notifyDataSetChanged();
+    }
+
 
 //    private Context context;
 //    private String rTitle[];

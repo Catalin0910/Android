@@ -1,6 +1,7 @@
 package com.ai.proiect_cebuc_gabriel_catalin_1079;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,12 +16,19 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ai.proiect_cebuc_gabriel_catalin_1079.model.User;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,6 +42,9 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
             R.drawable.ap4, R.drawable.ap5,
             R.drawable.ap6, R.drawable.ap7, R.drawable.ap8,
             R.drawable.ap9, R.drawable.ap10};
+    private DatabaseReference databaseReference;
+    ArrayList<String> arrayList = new ArrayList<>();
+    ArrayAdapter<String> arrayAdapter;
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -45,7 +56,6 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent);
-
         drawerLayout =  findViewById(R.id.drawer_layout);
         navigationView =  findViewById(R.id.navigation_view);
         toolbar =  findViewById(R.id.toolbar);
@@ -75,10 +85,7 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for(Apartemnte ap: apartemntes){
-                            apartamenteAdapter.addItems(ap);
-
-                        }
+                            apartamenteAdapter.addItems(apartemntes);
                     }
                 });
             }
@@ -88,6 +95,62 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
                 Log.v("rent1", error + error.getLocalizedMessage());
             }
         });
+
+
+
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("apartamente");
+        //arrayAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+        listView.setAdapter(apartamenteAdapter);
+//        databaseReference.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                String value = snapshot.getValue(ApartamenteClass.class).toString();
+//                arrayList.add(value);
+//                arrayAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot childSnapShot : snapshot.getChildren()) {
+
+                    String title = (String) childSnapShot.child("titlu").getValue();
+                    String contact = (String) childSnapShot.child("contant").getValue();
+                    String price =  childSnapShot.child("pret").getValue().toString();
+                    String description = (String) childSnapShot.child("descriere").getValue();
+                    Apartemnte apartemnte = new Apartemnte(title, "", contact, price, description);
+                    apartamenteAdapter.addElement(apartemnte);
+                }
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -118,6 +181,11 @@ public class RentActivity extends AppCompatActivity implements NavigationView.On
         listView.setAdapter(apartamenteAdapter);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DownloadAprtamente.getInstance().clearMemory();
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

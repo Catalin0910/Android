@@ -29,8 +29,10 @@ public class DownloadAprtamente {
         return instance;
     }
 
+    private  Thread apartamenteThread;
+
     public void getApartmentData(final IApartement listener){
-        new Thread(new Runnable() {
+        apartamenteThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -57,8 +59,15 @@ public class DownloadAprtamente {
                     listener.onFailure(HttpURLConnection.HTTP_INTERNAL_ERROR, e);
                 }
             }
-        }).start();
+        });
+        apartamenteThread.start();
     }
+
+    public void clearMemory(){
+        apartamenteThread = null;
+    }
+
+
 
     public ArrayList<Apartemnte> parseApartamenteJson(String result){
         ArrayList<Apartemnte> flats = new ArrayList<>();
