@@ -13,9 +13,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.ai.proiect_cebuc_gabriel_catalin_1079.model.UserProp;
 import com.google.android.material.navigation.NavigationView;
@@ -28,7 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class PropertiesPropActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private Button adugareApp;
+    private Button adugareApp, stergereApp;
     private DatabaseReference databaseReference;
     private ListView listView;
     ArrayList<String> arrayList = new ArrayList<>();
@@ -37,6 +39,7 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Toolbar toolbar;
+    private String apartamenteAdugate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_rent);
+        stergereApp = findViewById(R.id.sterger_app);
 
         user = (UserProp) getIntent().getSerializableExtra("UserRent");
         if(user!=null){
@@ -108,8 +112,8 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
             }
         });
 
-
     }
+
 
     @Override
     public void onBackPressed() {

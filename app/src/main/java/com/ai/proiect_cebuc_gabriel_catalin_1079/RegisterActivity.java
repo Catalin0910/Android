@@ -74,14 +74,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                         UserProp userProp = new UserProp(userName, email, password, tipchiras2);
                         userPropDao.insert(userProp);
-                        Toast.makeText(RegisterActivity.this, "sunt in bd propietari", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, R.string.bdprop, Toast.LENGTH_SHORT).show();
                         Intent moveToLogin = new Intent(RegisterActivity.this, MainActivity.class);
                         startActivity(moveToLogin);
 
                     }else {
                         User user = new User(userName, userFamilyName, email, password, tipchiras1);
                         userDao.insert(user);
-                        Toast.makeText(RegisterActivity.this, "sunt in bd chiriasi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, R.string.bdchirias, Toast.LENGTH_SHORT).show();
                         Intent moveToLogin = new Intent(RegisterActivity.this, MainActivity.class);
                         startActivity(moveToLogin);
                     }

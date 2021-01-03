@@ -96,4 +96,7 @@
     <string name="inapoi"><![CDATA[<-]]></string>
     <string name="texturaa">Apartament adugat cu succes</string>
     <string name="delete">Delete Flat</string>
+    <string name="mesaj">Apartament Sters</string>
+    <string name="bdprop">Sunt in bd propietari</string>
+    <string name="bdchirias">Sunt in bd chirias</string>
 </resources>
