@@ -8,8 +8,9 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".Module"
         android:theme="@style/AppTheme">
-        <activity android:name=".FormAddFlatPropActivity"></activity>
+        <activity android:name=".FormAddFlatPropActivity"/>
         <activity android:name=".GrafPropActivity" />
         <activity android:name=".PropertiesPropActivity" />
         <activity android:name=".RatePropActivity" />

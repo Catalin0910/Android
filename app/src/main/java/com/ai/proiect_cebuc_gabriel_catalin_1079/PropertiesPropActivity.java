@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -40,6 +41,8 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
     private NavigationView navigationView;
     private Toolbar toolbar;
     private String apartamenteAdugate;
+    Module module;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
         drawerLayout.addDrawerListener(toogle);
         toogle.syncState();
 
+        module = ((Module)getApplicationContext());
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_rent);
         stergereApp = findViewById(R.id.sterger_app);
@@ -99,6 +103,39 @@ public class PropertiesPropActivity extends AppCompatActivity implements Navigat
            @Override
            public void onCancelled(@NonNull DatabaseError error) {
 
+           }
+       });
+
+       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               module.setId(arrayList.get(position));
+               module.setName(arrayList.get(position));
+           }
+       });
+
+       stergereApp.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               final String str = module.getId();
+               if(str == ""){
+                   Toast.makeText(PropertiesPropActivity.this, R.string.lista, Toast.LENGTH_SHORT).show();
+               }else {
+                   databaseReference.child("apartamente").child(str).addListenerForSingleValueEvent(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+                           databaseReference.child(str).removeValue();
+                       }
+
+                       @Override
+                       public void onCancelled(@NonNull DatabaseError error) {
+
+                       }
+                   });
+                   Toast.makeText(PropertiesPropActivity.this, R.string.deltee, Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent(getApplicationContext(), PropertiesPropActivity.class);
+                   startActivity(intent);
+               }
            }
        });
 

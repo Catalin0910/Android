@@ -99,4 +99,6 @@
     <string name="mesaj">Apartament Sters</string>
     <string name="bdprop">Sunt in bd propietari</string>
     <string name="bdchirias">Sunt in bd chirias</string>
+    <string name="lista">Please select item to delete</string>
+    <string name="deltee">Flat delete</string>
 </resources>
